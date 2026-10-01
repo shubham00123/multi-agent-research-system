@@ -12,7 +12,7 @@ app = FastAPI(title="Multi-Agent Research API")
 # Allow React frontend to communicate with FastAPI
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["https://multi-agent-research-system-1-j5rm.onrender.com"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
