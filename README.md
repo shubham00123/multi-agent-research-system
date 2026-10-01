@@ -67,6 +67,34 @@ The main goal of the UI was to make the multi-agent workflow simple and easy to 
 - Web Search
 - HTML & CSS
 
+## ☁️ Deployment
+
+I also deployed this project on **Render** to make it publicly accessible.
+
+The application was deployed using two separate Render services:
+
+- **Backend:** FastAPI was deployed as a **Render Web Service**.
+- **Frontend:** React/Vite was deployed as a **Render Static Site**.
+
+For the backend, I configured the Render service with the project root as the root directory, installed the dependencies using `pip install -r requirement.txt`, and used the following start command:
+
+`uvicorn backend.app:app --host 0.0.0.0 --port $PORT`
+
+For the frontend, the `frontend` folder was selected as the root directory, with the build command `npm ci && npm run build` and `dist` as the publish directory.
+
+I also configured the required API keys and environment variables securely through Render instead of exposing the `.env` file on GitHub.
+
+During deployment, I faced several issues such as dependency/import errors, an incorrect requirements file name, backend start command configuration, localhost API URLs, and CORS errors between the deployed frontend and backend. I debugged and fixed these issues to successfully deploy the complete application.
+
+The React frontend communicates with the deployed FastAPI backend through the `/research` API endpoint, allowing the complete multi-agent research workflow to work online.
+
+### 🔗 Live Project
+
+https://multi-agent-research-system-1-j5rm.onrender.com
+
+
+
+
 ## 📁 Project Structure
 
 multi-agent-research-system/
