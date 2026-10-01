@@ -38,7 +38,7 @@ function App() {
     setError("")
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/research", {
+      const response = await fetch("https://multi-agent-research-system-ed3z.onrender.com/research", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
